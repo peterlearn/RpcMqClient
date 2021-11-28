@@ -10,12 +10,12 @@ import (
 
 
 type Args struct {
-	A int `msgpack:"a"`
-	B int `msgpack:"b"`
+	A int `json:"a"`
+	B int `json:"b"`
 }
 
 type Result struct {
-	Result int `msgpack:"result"`
+	Result int `json:"result"`
 }
 
 func init() {
@@ -38,7 +38,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	for i := 0; i < 100000; i++ {
+	for i := 0; i < 10; i++ {
 		params := Args{A: 5, B: i}
 
 		var result Result
